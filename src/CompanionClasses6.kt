@@ -1,0 +1,2 @@
+class CompanionClasses6 {
+}

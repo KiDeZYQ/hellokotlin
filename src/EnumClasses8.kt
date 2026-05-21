@@ -1,0 +1,2 @@
+class EnumClasses8 {
+}
