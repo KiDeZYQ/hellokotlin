@@ -32,5 +32,33 @@ fun handleNetworkState(result: NetworkResult) {
         }
         // NO 'else' block needed!
     }
+
+    val suc = NetworkResult.Success("asdas")
+    val suc2 = NetworkResult.Success("asdas")
+    val suc3 = suc.copy("asdas")  // suc == suc2 == suc3
+    /**
+     * 注意 == 表示比较两个class的属性是否完全一样，相当于java中调用equals方法
+     * === 表示比较两个class的地址是否相等，相当于java中的==
+     */
+    if (suc2 == suc) {
+        // 最终这两个dataclass是equals的
+        println("data class are equals")
+    } else {
+        println("data class are not equals")
+    }
+    if (suc == suc3) {
+        println("copy data class are equals")
+    }
+
+    val normal = Normal("1")
+    val normal2 = Normal("1")
+    // 这种非data class 即使属性一样，也返回false
+    println(normal ==  normal2)
 }
 
+class Normal(val key: String)
+
+
+fun main() {
+    handleNetworkState(NetworkResult.Loading)
+}

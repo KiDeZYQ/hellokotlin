@@ -20,6 +20,8 @@ class Person(_firstName: String, _lastName: String) {
  * internal	             The same module only.
  * protected	        The declaring class and its subclasses (not allowed for top-level functions).
  * private	            The declaring file or class only.
+ *
+ * 另外，默认kotlin定义的类和属性都是final的，如果想要其他类继承该类，则需要在类和属性定义前增加open关键字
  */
 class Person(val firstName: String, val lastName: String) {
     init {
